@@ -16,6 +16,11 @@ const spanCartPrice = document.getElementById("cartPrice");
 const spanCartLink = document.getElementById("cartLink");
 const btnAddToCart = document.getElementById("addToCart");
 
+const cartNameBottom = document.getElementById("cartNameBottom");
+const cartPriceBottom = document.getElementById("cartPriceBottom");
+const cartTextAreaBottom = document.getElementById("CartTextArea");
+const cartQuantityBottom = document.getElementById("cartQuantityBottom");
+
 const gamesList = [];
 const cartGames = [];
 fetch("../dataBase/gameList.json")

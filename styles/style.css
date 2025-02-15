@@ -22,13 +22,14 @@ body{
 .steam-games{
    width: 100%;
    background-color: rgb(184, 132, 64);
-   margin: 30px 0 0 0;
+   margin: 30px 0 30px 0;
    border-radius: 15px;
    overflow: hidden;
    padding: 20px;
    display: flex;
    flex-direction: column;
    min-height: 710px;
+
 
 }
 .game-containers{
@@ -294,3 +295,156 @@ gap: 60px;
    
 }
 
+.cartPicture{
+   display: flex;
+   max-width: 200px;
+   min-height: 300px;
+   margin: 0 10px 0 10px;
+   border-radius: 20px;
+   overflow: hidden;
+   border: 1px solid black;
+}
+.cartPicture img{
+   /* max-width: 200px;
+   min-height: 270px; */
+   width: 100%;
+   
+}
+.cartBlockOne{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background-color: rgb(199, 199, 199);
+   border-radius: 10px;
+   padding: 10px;
+   margin-top: 10px;
+   width: 100%;
+   font-size: 25px;
+
+
+}
+.cartBlockTwo{
+   display: flex;
+   padding-bottom: 10px;
+   justify-content: center;
+   min-height: 300px;
+   border-bottom: 1px  solid black;
+
+}
+.cartTwoBlock{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 80%;
+}
+.cartInfo{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   gap:20px
+}
+
+.cartInfo textarea{
+overflow-x: hidden;
+resize: vertical;
+min-height: 100px;
+max-width: 600px;
+width: 100%;
+resize: none;
+background-color: rgb(199, 199, 199);
+color: black;
+font-size: 20px;
+}
+::-webkit-scrollbar {
+   width: 8px; 
+   height: 8px; 
+ }
+ 
+ /* Стиль фона для области скроллбара */
+ ::-webkit-scrollbar-track {
+   background: #f0f0f0; 
+   border-radius: 10px; 
+ }
+ 
+ /* Стиль для ползунка скроллбара */
+ ::-webkit-scrollbar-thumb {
+   background: #888; 
+   border-radius: 10px;
+   transition: background 0.3s; 
+ }
+ 
+
+ ::-webkit-scrollbar-thumb:hover {
+   background: #555; 
+ }
+.cartQuantityContainer{
+   display: flex; 
+   width: 100%;
+   justify-content: center; 
+   gap: 20px; 
+   align-items: center; 
+}
+.cartQuantityContainer span{
+   display: inline-flex;
+   align-items: center;
+}
+.cartQuantityContainer button{
+   padding: 10px;
+   font-size: 20px;
+   border: 1px solid black;
+   background-color: rgb(199, 199, 199);
+   border-radius: 30px;
+   transition: background-color 0.3s ease, color 0.3s ease;
+   cursor: pointer;
+}
+.cartQuantityContainer button:hover{
+   background-color: black;
+   color: white;
+   
+}
+.cartDiscriptionBottom{
+   font-size: 20px;
+   width: 50%;
+}
+
+.btnParent{
+   padding: 10px;
+   border-radius: 10px;
+   background-color: rgb(134, 134, 134);
+   font-size: 20px;
+   color: white;
+   transition: background-color 0.3s ease;
+   cursor: pointer;
+}
+.btnParent:hover{
+   background-color: rgb(61, 61, 61);
+}
+.allPriceCart{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   flex-direction: column;
+   gap: 10px;
+}
+.allPriceCartBtn{
+   display: flex;
+   max-width: 300px;
+   width: 100%;
+   justify-content: space-between;
+}
+.allPriceCartBtn button{
+   padding: 10px;
+   font-size: 20px;
+   cursor: pointer;
+   border-radius: 10px;
+   transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.allPriceCartBtn button:hover{
+   transform: scale(1.07);
+   background-color: white;
+}
