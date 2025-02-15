@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+   font-family: "Roboto Condensed", serif;
+   font-optical-sizing: auto;
+   font-style: normal;
+}
+.header{
+   width: 100%;
+   background-color: rgb(116, 60, 38);
+   color: white;
+   border-radius: 0 0 30px 30px;
+}
+.nav{
+   padding: 15px 20px;
+   font-size: 25px;
+
+}
+.ul{
+   display: flex;
+   justify-content: space-between;
+}
+.steam-games{
+   width: 100%;
+   background-color: rgb(184, 132, 64);
+   margin: 30px 0 0 0;
+   border-radius: 15px;
+   overflow: hidden;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   min-height: 710px;
+
+}
+.game-containers{
+   display: flex;
+   gap: 30px;
+   overflow: auto;
+   justify-content: flex-start;
+   scroll-behavior: smooth;
+   
+}
+.game-containers:hover{
+
+}
+.game-containers::-webkit-scrollbar {
+   height: 5px; 
+
+}
+.game-containers::-webkit-scrollbar-thumb {
+   background-color: #b15c2b; 
+   border-radius: 10px; 
+}
+.head{
+   display: flex;
+   font-weight: 600;
+   font-size: 30px;
+   justify-content: space-between;
+}
+.head button{
+   background-color: #fcce93;
+   padding: 10px;
+   border-radius: 30px;
+   font-size: 15px;
+   transition: background-color 0.3s ease;
+
+
+}
+.head button:hover{
+   background-color: #fac178;
+}
+.games-block{
+   min-width: 300px;
+   background-color:rgb(0, 0, 0);
+   margin: 15px 0 0 0;
+   border-radius: 10px;
+   padding: 20px;
+   overflow: hidden;
+   color: white;
+   transition: transform 0.3s ease;
+   max-width: 440px;
+
+}
+.games-block:hover{
+   transform: scale(0.99);
+}
+.pictures {
+   width: 100%; 
+   padding-top: 100%; 
+   position: relative; 
+   overflow: hidden; 
+}
+
+.pictures img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   max-width: 440px;
+   max-height: 440px;
+   object-fit: cover;   
+   border-radius: 10px;
+}
+.nameGame{
+   margin: 10px 0 10px 0;
+   font-size: 40px;
+   font-weight: 500;
+}
+
+.modal-window{
+   display: none;
+   position: fixed;
+   z-index: 1;
+
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.281); 
+   overflow: auto;
+   padding-top: 60px;
+}
+
+
+.bcShadow{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 20px 30px 30px 30px;
+   gap: 15px;
+   margin: 0 auto;
+   max-width: 300px;
+   background-color: rgb(158, 83, 32);
+   border-radius: 30px;
+   box-shadow: 5px 5px 40px #00000096;
+   border: 2px solid black;
+   transition: transform 0.3s ease;
+}
+.bcShadow:hover{
+   transform:scale(1.01)
+}
+.bcShadow .addInfo{
+   font-size: 30px;
+   font-weight: 600;
+   color: white;
+}
+
+.bcShadow input, .bcShadow textarea{
+   padding: 7px;
+   font-size: 17px;
+   border: 2px solid black;
+   background-color: rgb(158, 83, 32);
+   color: white;
+   border-radius: 10px;
+}
+.bcShadow input::placeholder, .bcShadow textarea::placeholder{
+   color: rgba(255, 255, 255, 0.589);
+}
+.btn-model button{
+   padding: 10px;
+   font-size: 17px;
+   outline: none;
+   background-color: white;
+   border-radius: 20px;
+   transition: background-color 0.3s ease, color 0.3s ease;
+   
+}
+
+.btn-model button:hover{
+   outline: 2px solid black;
+   background-color: rgb(158, 83, 32);
+   color: white;
+}
+.btn-model{
+   display: flex;
+   gap: 40px;
+}
+
+.bcShadowGame {
+   display: none;
+   position: fixed;
+   z-index: 1; 
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.192); 
+   justify-content: center; 
+   align-items: center; 
+   pointer-events: auto; 
+ }
+ 
+ .modal-window-game {
+   display: flex;
+   flex-direction: column;
+   position: fixed;
+   z-index: 2; 
+   max-width: 500px;
+   background-color: rgb(255, 255, 255);
+   padding: 20px;
+   border-radius: 20px;
+   overflow: auto;
+   pointer-events: auto; 
+   transition: transform 0.3s ease;
+ }
+ .modal-window-game:hover{
+   transform: scale(1.05);
+ }
+ 
+
+.modal-gameInfo{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   padding: 10px;
+   font-size: 20px;
+}
+.modal-span{
+   font-weight: 600;
+}
+.modal-nameGame, .modal-discriptionGame{
+   display: flex;
+   gap:20px
+}
+.modal-nameGame{
+   font-weight: 500;
+}
+.modal-priceGame{
+display: flex;
+gap: 60px;
+}
+.modal-moreInfo{
+   display: flex;
+   gap: 10px;
+}
+.modal-moreInfo a:visited{
+   color:blue;
+}
+.modal-moreInfo a{
+   color:blue;
+   position: relative;
+   transition: border;
+}
+.modal-moreInfo a::after{
+   content: "";
+   display: block;
+   position: absolute;
+   right: 0;
+   bottom: -3px;
+   width: 0;
+   height: 2px;
+   background-color: blue; /* Цвет подчеркивания при исчезании линии*/
+   transition: width 0.5s; /* Время эффекта */
+}
+
+.modal-moreInfo a:hover::after{
+   content: "";
+   width: 100%;
+   display: block;
+   position: absolute;
+   left: 0;
+   bottom: -3px;
+   height: 2px;
+   background-color: blue;
+   transition: width 0.5s;
+}
+.modal-btnBlock{
+   display: flex;
+   justify-content: space-between;
+   padding: 0px 30px 0px 30px;
+}
+
+.modal-btnBlock img{
+   cursor: pointer;
+   max-width: 50px;
+   max-height: 50px;
+   transition: transform 0.3s ease;
+}
+.modal-btnBlock img:hover{
+   transform: scale(1.07);
+}
+
+.modal-btnBlock button{
+   padding: 15px;
+   font-size: 20px;
+   background-color: black;
+   color: white;
+   border-radius: 20px;
+   transition: background-color 0.3s ease, color 0.3s ease, outline 0.3s ease;
+   cursor: pointer;
+}
+
+.modal-btnBlock button:hover{
+   background-color: white;
+   color:black;
+   outline: 1px solid black;
+   
+}
+ 

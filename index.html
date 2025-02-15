@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="null.css">
+   <link rel="stylesheet" href="style.css">
+   <title>Магазин суши шоп</title>
+</head>
+<body>
+   <div class="modal-window">
+      <div class="bcShadow">
+      <div class="addInfo">Добавление игры</div>
+         <input type="text" placeholder="Ссылка на изображение" id="addLink">
+         <input type="text" placeholder="Название игры" id="addName">
+         <textarea type="text" placeholder="Описание" id="addDiscr"></textarea>
+         <div class="btn-model">
+            <button id="addGame">Добавить</button>
+            <button id="modalClose">Отмена</button>
+         </div>
+      </div>
+   </div>
+   <div class="bcShadowGame">
+      <div class="modal-window-game">
+         <div class="modal-gameInfo">
+            <div class="modal-nameGame"><span class="modal-span">Название:</span>  <span id="cartName">Dota2</span></div>
+            <div class="modal-discriptionGame">
+               <span class="modal-span">Описание:</span> 
+               <span id="cartDiscription">Dota 2: Многопользовательская стратегическая игра с элементами ролевых игр, в которой две команды по пять человек соревнуются за контроль над картой. Игроки управляют уникальными героями, каждый из которых обладает особыми способностями, и должны разрушить главное здание противника, при этом сражаясь с многочисленными врагами.</span>
+            </div>
+            <div class="modal-priceGame"><span class="modal-span">Цена:</span> <span id="cartPrice">9.99</span></div>
+            <div class="modal-moreInfo"><span class="modal-span">Подробнее:</span><span><a id="cartLink" href="#">Нажми меня полностью</a></span></div>
+            <div class="modal-btnBlock">
+               <img src="img/shoppingCart.png" id="addToCart" alt="" title="Добавить в карзину"></img>
+               <button id="closeCart">Назад</button>
+         </div>
+      </div>
+   </div>
+   </div>
+   </div>
+      <header class="header">
+         <nav class="nav">
+            <ul class="ul">
+               <li class="li">Steam</li>
+               <li class="li">PlayStation</li>
+               <li class="li">Xbox</li>
+               <li class="li">Account</li>
+            </ul>
+         </nav>
+      </header>
+      <main class = "main">
+        
+         <div class="steam-games" >
+            <div class="head"><span>Доступные игры</span><button id="OpenModelWindow">Добавить</button> </div>
+            <div class="game-containers" id="steamGames">
+            <!-- <div class="games-block">
+               <div class="pictures">
+                  <img src="/img/dota.jpg" alt="">   
+               </div>
+               <div class="nameGame"><span>Dota 2</span></div>
+               <div class="discription"><span>Lorem ipsum dolor sit amet
+                   consectetur adipisicing elit. Voluptatem quia
+                    temporibus, expedita doloremque vel veritatis alia
+                    s quam tempora nostrum. Cum!</span></div>
+            </div>
+            <div class="games-block">
+               <div class="pictures">
+                  <img src="/img/cs2.jpg" alt="">   
+               </div>
+               <div class="nameGame"><span>Conter Strike 2</span></div>
+               <div class="discription"><span>Lorem ipsum dolor sit amet
+                   consectetur adipisicing elit. Voluptatem quia
+                    temporibus, expedita doloremque vel veritatis alia
+                    s quam tempora nostrum. Cum!</span></div>
+                  </div>
+            </div> -->
+         </div>
+      </main>
+      <footer class="footer"></footer>
+      <script src="scripts.js" defer></script>
+</body>
+</html>
