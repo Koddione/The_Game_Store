@@ -5,6 +5,7 @@ const btnCloseModelWindow = document.getElementById("modalClose");
 const btnOpenModelWindow = document.getElementById("OpenModelWindow");
 const inputAddLink = document.getElementById("addLink");
 const inputAddName = document.getElementById("addName");
+const inputAddPrice = document.getElementById("addPrice");
 const inputAddDiscription = document.getElementById("addDiscr");
 const modalWindowCart = document.querySelector(".bcShadowGame");
 const btnCloseCart = document.getElementById("closeCart");
@@ -17,7 +18,7 @@ const btnAddToCart = document.getElementById("addToCart");
 
 const gamesList = [];
 const cartGames = [];
-fetch("dataBase/gameList.json")
+fetch("../dataBase/gameList.json")
   .then((response) => response.json())
   .then((data) => {
     data.forEach((el) => {
@@ -45,11 +46,11 @@ class ObjectGames {
   }
 
   fnAddGame(index) {
-    const imagePath = `/img/${this.scrImg}`;
+    const imagePath = `../img/${this.scrImg}`;
 
     return `<div class="games-block" data-index=${index}>
                 <div class="pictures">
-                   <img src="${imagePath}" onerror="this.onerror=null; this.src='/img/undefined.jpg'" alt="${this.nameGame}">   
+                   <img src="${imagePath}" onerror="this.onerror=null; this.src='../img/undefined.jpg'" alt="${this.nameGame}">   
                 </div>
                 <div class="nameGame"><span>${this.nameGame}</span></div>
                 <div class="discription"><span>${this.discription}</span></div>
@@ -85,6 +86,7 @@ btnAddGame.addEventListener("click", () => {
     scrImg: inputAddLink.value,
     nameGame: inputAddName.value,
     discription: inputAddDiscription.value,
+    price: inputAddPrice.value,
   });
 
   inputAddLink.value = "";
@@ -92,9 +94,29 @@ btnAddGame.addEventListener("click", () => {
   inputAddDiscription.value = "";
   modalAddGame.style.display = "none";
   render();
-
-  const jsonData = JSON.stringify(gamesList, null, 2);
 });
+
+let currentGame = null;
+
+function handleAddToCart() {
+  if (!currentGame) return;
+
+  const gameExistsIndex = cartGames.findIndex(
+    (item) => item.nameGame === currentGame.nameGame
+  );
+
+  if (gameExistsIndex !== -1) {
+    cartGames[gameExistsIndex].quantity =
+      (cartGames[gameExistsIndex].quantity || 1) + 1;
+    console.log(`Количество игры "${currentGame.nameGame}" увеличено.`);
+  } else {
+    currentGame.quantity = 1;
+    cartGames.push(currentGame);
+    console.log(`Игра "${currentGame.nameGame}" добавлена в корзину.`);
+  }
+
+  modalWindowCart.style.display = "none";
+}
 
 steamContainer.addEventListener("click", (event) => {
   const gameBlock = event.target.closest(".games-block");
@@ -102,19 +124,18 @@ steamContainer.addEventListener("click", (event) => {
     const gameIndex = Number(gameBlock.getAttribute("data-index"));
 
     if (gameIndex >= 0 && gameIndex < gamesList.length) {
-      const game = gamesList[gameIndex];
-      if (game.index === gameIndex) {
-        modalWindowCart.style.display = "flex";
+      currentGame = gamesList[gameIndex];
 
-        spanCartName.textContent = game.nameGame;
-        spanCartDiscription.textContent = game.discription;
-        spanCartPrice.textContent = game.price;
-        spanCartLink.href = game.link;
-        btnAddToCart.addEventListener("click", () => {
-          cartGames.push(game);
-          modalWindowCart.style.display = "none";
-        });
-      }
+      modalWindowCart.style.display = "flex";
+
+      spanCartName.textContent = currentGame.nameGame;
+      spanCartDiscription.textContent = currentGame.discription;
+      spanCartPrice.textContent = currentGame.price;
+      spanCartLink.href = currentGame.link;
+
+      btnAddToCart.removeEventListener("click", handleAddToCart);
+
+      btnAddToCart.addEventListener("click", handleAddToCart);
     }
   }
 });

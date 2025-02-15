@@ -3,8 +3,8 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="null.css">
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="../styles/null.css">
+   <link rel="stylesheet" href="../styles/style.css">
    <title>Магазин суши шоп</title>
 </head>
 <body>
@@ -13,6 +13,7 @@
       <div class="addInfo">Добавление игры</div>
          <input type="text" placeholder="Ссылка на изображение" id="addLink">
          <input type="text" placeholder="Название игры" id="addName">
+         <input type="text" placeholder="Цена игры" id="addPrice">
          <textarea type="text" placeholder="Описание" id="addDiscr"></textarea>
          <div class="btn-model">
             <button id="addGame">Добавить</button>
@@ -31,7 +32,7 @@
             <div class="modal-priceGame"><span class="modal-span">Цена:</span> <span id="cartPrice">9.99</span></div>
             <div class="modal-moreInfo"><span class="modal-span">Подробнее:</span><span><a id="cartLink" href="#">Нажми меня полностью</a></span></div>
             <div class="modal-btnBlock">
-               <img src="img/shoppingCart.png" id="addToCart" alt="" title="Добавить в карзину"></img>
+               <img src="../img/shoppingCart.png" id="addToCart" alt="" title="Добавить в карзину"></img>
                <button id="closeCart">Назад</button>
          </div>
       </div>
@@ -44,7 +45,7 @@
                <li class="li">Steam</li>
                <li class="li">PlayStation</li>
                <li class="li">Xbox</li>
-               <li class="li">Account</li>
+               <li class="li">basket of goods</li>
             </ul>
          </nav>
       </header>
@@ -75,8 +76,10 @@
                   </div>
             </div> -->
          </div>
+       
       </main>
+  
       <footer class="footer"></footer>
-      <script src="scripts.js" defer></script>
+      <script src="../scripts/scripts.js" defer></script>
 </body>
 </html>
