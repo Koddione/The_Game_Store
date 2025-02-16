@@ -20,6 +20,11 @@ const cartNameBottom = document.getElementById("cartNameBottom");
 const cartPriceBottom = document.getElementById("cartPriceBottom");
 const cartTextAreaBottom = document.getElementById("CartTextArea");
 const cartQuantityBottom = document.getElementById("cartQuantityBottom");
+const btnLeftQuantity = document.getElementById("btnLeft");
+const btnRightQuantity = document.getElementById("btnRight");
+const btnNextGameCart = document.getElementById("BtnNext");
+const btnBackGameCart = document.getElementById("BtnBack");
+const cartDisplayGame = document.getElementById("cartDisplayGame");
 
 const gamesList = [];
 const cartGames = [];
@@ -70,6 +75,30 @@ const newGame = new ObjectGames({
 });
 function render() {
   steamContainer.innerHTML = ``;
+  cartDisplayGame.innerHTML = ``;
+  if (cartGames.length === 0) {
+    cartDisplayGame.innerHTML = `<span>Корзина пуста</span>`;
+    cartDisplayGame.classList.add("cartIsClear");
+  } else {
+    cartGames.forEach((game) => {
+      cartDisplayGame.innerHTML = ` <div class="cartBlockWithGame"> <!-- cartBlockWithGame -->
+                  <div class="cartPicture"><img src="../img/cs2.jpg" alt=""> </div>
+                  <div class="cartBlockWithGameNoImage"> <!-- cartBlockWithGameNoImage -->
+                     <div class="cartInfo"> <!-- cartInfo -->
+                        <div class="cartName"><span id="cartNameBottom">Name</span></div>
+                        <div class="cartPrice"><span id="cartPriceBottom"></span>Free</div>
+                        <div class="cartDiscriptionBottom"><textarea disabled id="CartTextArea">Dota 2: Многопользовательская стратегическая игра с элементами ролевых игр, в которой две команды по пять человек соревнуются за контроль над картой. Игроки управляют уникальными героями, каждый из которых обладает особыми способностями, и должны разрушить главное здание противника, при этом сражаясь с многочисленными врагами.</textarea></div>
+                        <div class="cartQuantityContainer"> <!-- cartQuantityContainer -->
+                           <button id="btnLeft">&#8592</button>
+                           <div class="cartQuantityDisplay"><span id="cartQuantityBottom">0</span></div>
+                           <button id="btnRight">&#8594</button>
+                        </div> <!-- cartQuantityContainer -->
+                  </div> <!-- cartInfo -->
+               </div> <!-- cartBlockWithGameNoImage -->
+            </div> <!-- cartBlockWithGame -->`;
+    });
+  }
+
   for (let i = 0; i < gamesList.length; i++) {
     const newGame = new ObjectGames(gamesList[i]);
 
@@ -119,7 +148,7 @@ function handleAddToCart() {
     cartGames.push(currentGame);
     console.log(`Игра "${currentGame.nameGame}" добавлена в корзину.`);
   }
-
+  render();
   modalWindowCart.style.display = "none";
 }
 
